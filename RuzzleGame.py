@@ -128,7 +128,7 @@ class Ruzzle :
         for i, j in np.ndindex(self.grid.shape) :
             candidates = self.DFS(pos = (i,j),visited = [] ,words = [])
             ws += candidates if len(candidates) else []
-        return sorted(list(set([e for e in ws if len(e) > 1])), key=len)
+        return sorted(list(set([e for e in ws if len(e) > 1])), key=lambda x: (len(x), x[::1]), reverse=True)
 
     def __str__(self):
         s = '\n'
@@ -145,4 +145,5 @@ class Ruzzle :
 
 R = Ruzzle()
 R
+print(R.grid)
 print(R.find_all())
