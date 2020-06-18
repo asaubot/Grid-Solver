@@ -143,7 +143,3 @@ class Ruzzle :
 
 
 
-R = Ruzzle()
-R
-print(R.grid)
-print(R.find_all())
