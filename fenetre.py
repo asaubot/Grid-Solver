@@ -6,7 +6,7 @@ import sys
 HEIGHT = 4
 WIDTH = 4
 pygame.init()
-size = width, height = 1440, 720
+size = width, height = 1440, 650
 R = Ruzzle()
 
 #Ouverture de la fenêtre Pygame
@@ -16,7 +16,7 @@ screen = pygame.display.set_mode(size)
 BLACK = (0, 0, 0)
 GRAY = (180, 180, 180)
 WHITE = (255, 255, 255)
-BLUE = (0, 170, 255)
+BLUE = (0, 0, 255)
 
 # Fonts
 smallFont = pygame.font.Font("OpenSans-Regular.ttf", 20)
@@ -29,7 +29,7 @@ smallFontSpace = 21
 # Set the pygame window name 
 pygame.display.set_caption('Grid Solver')
 
-# Chargement et collage du fond
+# loading and pasting of the background "fond"
 fond = pygame.image.load("ruzzle.jpg").convert()
 screen.blit(fond, (0, 0))
 
@@ -93,10 +93,10 @@ message_to_screen(R.find_all())
 print(R.grid)
 print(R.find_all())
 
-#Rafraîchissement de l'écran
+# Update the screen
 pygame.display.flip()
 
-#BOUCLE INFINIE
+# Quit loop
 continuer = 1
 while continuer:
 	for event in pygame.event.get():
